@@ -11,7 +11,7 @@ module.exports = {
         hot: true,
         static: {
             directory : './dist',
-            watch: 'true'
+            // watch: 'true'
         }
     }
 
