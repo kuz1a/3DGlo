@@ -40,16 +40,24 @@ const timer = (deadline) => {
         
     }
     if (getTimeRemaining().timeRemaining > 0) {
+       
         updateClock()
         let timerId = setInterval(()=> {
             if (getTimeRemaining.dateNow > getTimeRemaining.dateStop) {
                 clearInterval(timerId)
+                
              }
              else {
                 updateClock()
+                
              }
         }, 1000)
+    } else {
+        timerHours.style.color = "red"
+        timerMinutes.style.color = "red"
+        timerSeconds.style.color = "red"
     }
+    console.log(getTimeRemaining().timeRemaining )
     // updateClock()
     
 }
