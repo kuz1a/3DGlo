@@ -1,5 +1,11 @@
-import oneModule from "./modules/one";
+import timer from "./modules/timer";
 import twoModule from "./modules/two";
 
-oneModule()
+
+timer('23 december 2021')
 twoModule()
+
+
+
+
+ 
