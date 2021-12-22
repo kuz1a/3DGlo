@@ -5,7 +5,8 @@ const menu = () => {
     const menuItems = menu.querySelectorAll('ul>li>a');
 
 
-    const handleMenu = () => {
+    const handleMenu = (e) => {
+        // e.preventDefault()
         menu.classList.toggle('active-menu')
     }
 
@@ -14,9 +15,19 @@ const menu = () => {
 
 
     menuItems.forEach(menuItem => {
-        menuItem.addEventListener('click', handleMenu)
+        menuItem.addEventListener('click', (e) => {
+            handleMenu()
+           
+        })
+        
     })
-
+    const smoothScroll = (a) => {
+        const blockID = a.getAttribute('href');
+        document.querySelector(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      };
 }
 
 export default menu 

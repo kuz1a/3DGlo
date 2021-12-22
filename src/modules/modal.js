@@ -1,9 +1,12 @@
 const modal = () => {
     const popupBtns = document.querySelectorAll('.popup-btn')
     const modal = document.querySelector('.popup');
+    const modalContent = modal.querySelector('.popup-content')
     const closePopup = modal.querySelector('.popup-close');
+    
 
-   
+    modalContent.style.left = '50%';
+    modalContent.style.transform = 'translateX(-50%)'
     modal.style.display = 'block';
     modal.style.transform = 'translateY(-100%)';
     let animation, count = 100;
@@ -17,7 +20,9 @@ const modal = () => {
       }
     };
     popupBtns.forEach((elem) => {
-      elem.addEventListener('click', () => {
+      elem.addEventListener('click', (e) => {
+          e.preventDefault();
+          
         if (document.body.clientWidth > 768) {
           requestAnimationFrame(transform);
         } else {
@@ -25,11 +30,14 @@ const modal = () => {
         }
       });
     });
-    closePopup.addEventListener('click', () => {
+    closePopup.addEventListener('click', (e) => {
+    e.preventDefault();
       count = 100;
       modal.style.transform = 'translateY(-100%)';
     });
 
+
+   
 }
 
 export default modal
