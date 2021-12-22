@@ -57,7 +57,7 @@ const timer = (deadline) => {
         timerMinutes.style.color = "red"
         timerSeconds.style.color = "red"
     }
-    console.log(getTimeRemaining().timeRemaining )
+    
     // updateClock()
     
 }
