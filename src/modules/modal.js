@@ -30,11 +30,14 @@ const modal = () => {
         }
       });
     });
-    closePopup.addEventListener('click', (e) => {
-    e.preventDefault();
-      count = 100;
-      modal.style.transform = 'translateY(-100%)';
-    });
+  
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.classList.contains('popup') || e.target.classList.contains('popup-close'))  {
+        count = 100;
+        modal.style.transform = 'translateY(-100%)';
+      }
+    })
 
 
    

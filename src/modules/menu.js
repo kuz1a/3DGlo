@@ -3,21 +3,20 @@ const menu = () => {
     const menu = document.querySelector('menu');
     const closeBtn = menu.querySelector('.close-btn')
     const menuItems = menu.querySelectorAll('ul>li>a');
-
+    const body = document.querySelector('body');
 
     const handleMenu = (e) => {
-        // e.preventDefault()
         menu.classList.toggle('active-menu')
     }
-
-    menuBtn.addEventListener('click',handleMenu)
-    closeBtn.addEventListener('click', handleMenu)
-
-
+    body.addEventListener('click', (e) => {
+    
+        if (e.target.closest('.menu') || e.target.closest('.close-btn')) {
+            handleMenu()
+        }
+    })
     menuItems.forEach(menuItem => {
         menuItem.addEventListener('click', (e) => {
             handleMenu()
-           
         })
         
     })
