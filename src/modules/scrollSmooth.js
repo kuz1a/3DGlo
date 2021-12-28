@@ -1,5 +1,6 @@
 const scrollSmooth = () => {
-    const anchors = document.querySelectorAll('a')
+    const menu = document.querySelector('menu')
+    const anchors = menu.querySelectorAll('a')
     
     for (let anchor of anchors) {
         anchor.addEventListener('click', function (e) {
