@@ -5,6 +5,7 @@ import scrollSmoth from "./modules/scrollSmooth";
 import validate from "./modules/validate"
 import tabs from "./modules/tabs"
 import slider from "./modules/slider"
+import calc from "./modules/calc";
 
 timer('31 december 2021')
 menu()
@@ -13,7 +14,7 @@ scrollSmoth()
 validate()
 tabs()
 slider()
-
+calc()
 
 
  
