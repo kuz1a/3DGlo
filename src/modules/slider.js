@@ -27,7 +27,7 @@ const slider = () => {
     dots[0].classList.add('dot-active');
     const autoSlide = () => {
         
-       
+    
         prevSlide(slides, currentSlide, 'portfolio-item-active');
         prevSlide(dots, currentSlide, 'dot-active')
         currentSlide ++;

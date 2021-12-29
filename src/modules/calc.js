@@ -24,23 +24,31 @@ const calc = (price = 100) => {
             calcDayValue = 1.5
         }
 
-
+        if (!calcType.value) {
+            calcSquare.value = '';
+            calcCount.value = '';
+            calcDay.value = '';
+            calcSquare.placeholder = 'Общая площадь*'
+            calcCount.placeholder = 'Количество пемещений'
+            calcDay.placeholder = 'Срок исполнения (в днях)'
+        }
 
         if (calcType.value && calcSquare.value) {
-            
             totalValue = price * calcTypeSelect * calcSquareValue * calcCountValue * calcDayValue
         } else {
             totalValue = 0;
+            
         }
-
 
         total.textContent = totalValue;
     }
+
     calcBlock.addEventListener('input', (e) => {
-        // countCalc();
+    
         if (e.target === calcType || e.target === calcSquare || e.target === calcCount || e.target === calcDay) {
             countCalc();
-        }
+
+        } 
     })
 }
 
