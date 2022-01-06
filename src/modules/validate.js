@@ -12,7 +12,6 @@ const validate = () => {
     calcBlock.addEventListener('input', (e) => {
         if (e.target.type === 'text') {
             e.target.value = e.target.value.replace(/[^\d]/g, '')
-           
         }
     })
     emailsInputs.forEach(email => {
