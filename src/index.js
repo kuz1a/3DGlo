@@ -8,7 +8,7 @@ import slider from "./modules/slider"
 import calc from "./modules/calc";
 import sendForm from './modules/sendForm'
 
-timer('31 december 2021')
+timer('15 january 2022')
 menu()
 modal()
 scrollSmoth()
@@ -18,17 +18,12 @@ slider()
 calc()
 sendForm({
     formId: 'form1', 
-    someElem: [
-        {
-            type: 'block',
-            id: 'total'
-        }
-        
-
-    ]
 })
 sendForm({
     formId: 'form2',
+})
+sendForm({
+    formId: 'form3',
 })
 
 

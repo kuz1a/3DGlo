@@ -1,6 +1,7 @@
 const scrollSmooth = () => {
     const menu = document.querySelector('menu')
     const anchors = menu.querySelectorAll('a')
+    const serviceBlock = document.getElementById('service-block')
     
     for (let anchor of anchors) {
         anchor.addEventListener('click', function (e) {
@@ -16,6 +17,17 @@ const scrollSmooth = () => {
       
         })
       }
+      serviceBlock.addEventListener('click', function(e){
+        e.preventDefault()
+          
+          const blockID = serviceBlock.getAttribute('href')
+          if (document.querySelector(blockID)) {
+              document.querySelector(blockID).scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                })
+          }
+      })
   
 }
 export default scrollSmooth

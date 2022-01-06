@@ -7,15 +7,17 @@ const sendForm = ({formId, someElem = []}) => {
     const successText = 'Thank you!'
 
     const validate = (list) => {
-        let success = true;
+        let success = false;
 
-        // list.forEach(input => {
-        //     if (!input.classList.contains('success')) {
-        //         success = false
-        //     }
-        // })
-
-        return success
+        
+        if (list[0].value.length > 2 && list[1].value.length > 7) {
+            success = true;
+         return success
+        }
+      
+        
+               
+        
     }
 
     const sendData = (data) => {
@@ -38,7 +40,7 @@ const sendForm = ({formId, someElem = []}) => {
         form.append(statusBlock)
         
         formData.forEach((value, key) => {
-            formBody[key] = value
+            formBody[key] = value.trim();
         })
 
         someElem.forEach(elem => {
@@ -58,6 +60,9 @@ const sendForm = ({formId, someElem = []}) => {
                 formElements.forEach(input => {
                     statusBlock.textContent = successText
                     input.value = ''
+                    setTimeout(()=>{
+                        statusBlock.textContent = '';        
+                    },3000)
                 })
             })
             .catch(error => {
@@ -75,7 +80,15 @@ const sendForm = ({formId, someElem = []}) => {
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-    
+            if ( form.id === 'form3') {
+                submitForm()
+                statusBlock.style.color = '#fff'
+                setTimeout(()=> {
+                    
+                    const popup = document.querySelector('.popup');
+                    popup.style.display = 'none'
+                },3500)
+            }
             submitForm()
             
         })
