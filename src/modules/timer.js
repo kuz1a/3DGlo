@@ -11,12 +11,11 @@ const timer = (deadline) => {
         }
     }
     const getTimeRemaining = () => {
-    // let deadline = '23 december 2021'
     let dateStop =  new Date(deadline).getTime()
     let dateNow = new Date().getTime();
     let timeRemaining = (dateStop - dateNow) / 1000
 
-    // let days = Math.floor(timeRemaining / 60 / 60 / 24)
+  
     let hours, minutes, seconds
 
     hours = Math.floor(timeRemaining / 60 / 60)
