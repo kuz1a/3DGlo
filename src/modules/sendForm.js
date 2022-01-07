@@ -12,10 +12,13 @@ const sendForm = ({formId, someElem = []}) => {
         
         if (list[0].value.length > 2 && list[1].value.length > 7) {
             success = true;
-         return success
+            return success
+        } else {
+            return false
         }
-      
         
+        
+
                
         
     }
@@ -69,7 +72,7 @@ const sendForm = ({formId, someElem = []}) => {
                 statusBlock.textContent = errorText
             })
         } else {
-            alert('Data is not valid')
+            statusBlock.textContent = errorText
         }
 
     }
