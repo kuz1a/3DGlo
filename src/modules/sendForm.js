@@ -67,6 +67,7 @@ const sendForm = ({formId, someElem = []}) => {
                 statusBlock.textContent = errorText
             })
         } else {
+
             statusBlock.textContent = errorText + ' Проверьте данные формы'
         }
 
