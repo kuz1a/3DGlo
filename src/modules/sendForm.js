@@ -9,18 +9,13 @@ const sendForm = ({formId, someElem = []}) => {
     const validate = (list) => {
         let success = false;
 
-        
-        if (list[0].value.length > 2 && list[1].value.length > 7) {
+        if (list[0].value.length > 2 && list[1].value.length > 7 && list[2].value.length > 7) {
             success = true;
             return success
-        } else {
+        }
+        else {
             return false
         }
-        
-        
-
-               
-        
     }
 
     const sendData = (data) => {
@@ -72,7 +67,7 @@ const sendForm = ({formId, someElem = []}) => {
                 statusBlock.textContent = errorText
             })
         } else {
-            statusBlock.textContent = errorText
+            statusBlock.textContent = errorText + ' Проверьте данные формы'
         }
 
     }
