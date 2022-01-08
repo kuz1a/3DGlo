@@ -7,7 +7,10 @@ const validate = () => {
     const message = document.querySelector('.mess');  
     const emailsInputs = document.querySelectorAll('input[type=email]')
     const phoneInputs = document.querySelectorAll('input[type=tel]');
-    
+
+
+    console.log(nameUserTwo)
+    console.log(nameUserThree)
 
     calcBlock.addEventListener('input', (e) => {
         if (e.target.type === 'text') {
@@ -34,16 +37,16 @@ const validate = () => {
         })
         nameUserTwo.addEventListener('input', () => {
 
-            let namePlaceholderOne = nameUserOne.getAttribute('placeholder')
+            let namePlaceholderOne = nameUserTwo.getAttribute('placeholder')
             if(namePlaceholderOne === 'Ваше имя') {
-                nameUserOne.value = nameUserOne.value.replace(/[^а-яА-Я\s\-]/g, '').trim()
+                nameUserTwo.value = nameUserTwo.value.replace(/[^а-яА-Я\s\-]/g, '').trim()
             }
         })
         nameUserThree.addEventListener('input', () => {
 
-            let namePlaceholderOne = nameUserOne.getAttribute('placeholder')
+            let namePlaceholderOne = nameUserThree.getAttribute('placeholder')
             if(namePlaceholderOne === 'Ваше имя') {
-                nameUserOne.value = nameUserOne.value.replace(/[^а-яА-Я\s\-]/g, '').trim()
+                nameUserThree.value = nameUserThree.value.replace(/[^а-яА-Я\s\-]/g, '').trim()
             }
         })
         message.addEventListener('input', () => {
