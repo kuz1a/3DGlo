@@ -16,7 +16,7 @@ const modal = () => {
           
         if (document.body.clientWidth > 768) {
           animate({
-            duration: 1000,
+            duration: 300,
             timing(timeFraction) {
               return timeFraction;
             },

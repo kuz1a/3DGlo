@@ -1,9 +1,8 @@
 const sendForm = ({formId, someElem = []}) => {
     const form = document.getElementById(formId)
-
     const statusBlock = document.createElement('div')
     const loadText = 'Loading...'
-    const errorText = 'Oops, error'
+    const errorText = 'Проверьте данные формы'
     const successText = 'Thank you!'
 
     const validate = (list) => {
@@ -59,15 +58,20 @@ const sendForm = ({formId, someElem = []}) => {
                     statusBlock.textContent = successText
                     input.value = ''
                     setTimeout(()=>{
-                        statusBlock.textContent = '';        
+                        statusBlock.textContent = '';  
+                        if (form.id === 'form3') {
+                        const popup = document.querySelector('.popup');
+                        popup.style.display = 'none'
+                        }      
                     },3000)
                 })
             })
             .catch(error => {
                 statusBlock.textContent = errorText
+            
             })
         } else {
-            statusBlock.textContent = errorText + ' Проверьте данные формы'
+            statusBlock.textContent = errorText
         }
 
     }
@@ -79,15 +83,13 @@ const sendForm = ({formId, someElem = []}) => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             if ( form.id === 'form3') {
-                submitForm()
+               
                 statusBlock.style.color = '#fff'
-                setTimeout(()=> {
-                    
-                    const popup = document.querySelector('.popup');
-                    popup.style.display = 'none'
-                },3500)
-            }
+            
+            } 
             submitForm()
+            
+            
             
         })
     } catch(error){

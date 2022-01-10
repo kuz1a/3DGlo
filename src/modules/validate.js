@@ -9,9 +9,6 @@ const validate = () => {
     const phoneInputs = document.querySelectorAll('input[type=tel]');
 
 
-    console.log(nameUserTwo)
-    console.log(nameUserThree)
-
     calcBlock.addEventListener('input', (e) => {
         if (e.target.type === 'text') {
             e.target.value = e.target.value.replace(/[^\d]/g, '')

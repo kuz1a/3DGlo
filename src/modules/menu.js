@@ -12,6 +12,8 @@ const menu = () => {
     
         if (e.target.closest('.menu') || e.target.closest('.close-btn')) {
             handleMenu()
+        } else {
+            menu.classList.remove('active-menu')
         }
     })
     menuItems.forEach(menuItem => {
