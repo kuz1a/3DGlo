@@ -3,23 +3,33 @@ const menu = () => {
     const menu = document.querySelector('menu');
     const closeBtn = menu.querySelector('.close-btn')
     const menuItems = menu.querySelectorAll('ul>li>a');
+    const listMenu = menu.querySelector('li');
     const body = document.querySelector('body');
 
     const handleMenu = (e) => {
         menu.classList.toggle('active-menu')
     }
     body.addEventListener('click', (e) => {
-    
-        if (e.target.closest('.menu') || e.target.closest('.close-btn')) {
+        
+        
+        if (e.target.closest('.menu') || e.target.closest('.close-btn') ) {
             handleMenu()
+        } 
+        else if (e.target.matches('menu') || e.target.matches('li')){ 
+            return
         } else {
             menu.classList.remove('active-menu')
         }
+        
+       
+        
+       
     })
     menuItems.forEach(menuItem => {
         menuItem.addEventListener('click', (e) => {
-            handleMenu()
+            handleMenu() 
         })
+       
         
     })
     const smoothScroll = (a) => {
